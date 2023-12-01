@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import BreakFast from "./menuItems/breakFast";
+import BreakFast from "./menuItems/BreakFast";
 import Coffee from "./menuItems/Coffee";
 import Tea from "./menuItems/Tea";
 import Pastry from "./menuItems/Pastry";
