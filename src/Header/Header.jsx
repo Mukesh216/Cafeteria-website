@@ -47,11 +47,11 @@ function Header() {
         >
           <span className='navbar-toggler-icon'></span>
         </button>
-        <div  className={`collapse navbar-collapse ${isNavOpen ? 'show' : ''}`} id='navbarTogglerDemo02'>
-          <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
-            <li className='nav-item me-3'>
+        <div className={`collapse navbar-collapse ${isNavOpen ? 'show' : ''}`} id='navbarTogglerDemo02'>
+          <ul className='navbar-nav text-center pt-3  pt-sm-0 ms-auto mt-3 mt-sm-0 mb-2 mb-lg-0 me-xl-5'>
+            <li className='nav-item me-4  me-xl-5'>
               <Link
-                className='nav-link fs-5 '
+                className='nav-link rounded-2 px-2 fs-6 border border-black '
                 to='/'
                 onClick={() => {
                   window.scrollTo(0, 0);
@@ -60,20 +60,21 @@ function Header() {
               >
                 HOME
               </Link>
+
             </li>
-            <li className='nav-item me-3'>
-              <Link className='nav-link fs-5' to='/menu' onClick={handleLinkClick}>
+            <li className='nav-item me-4  me-xl-5'>
+              <Link className='nav-link border border-black rounded-2 px-2 fs-6' to='/menu' onClick={handleLinkClick}>
                 MENU
               </Link>
             </li>
-            <li className='nav-item me-3'>
-              <Link className='nav-link fs-5' to='/events'
+            <li className='nav-item me-4  me-xl-5'>
+              <Link className='nav-link border border-black rounded-2 px-2 fs-6' to='/events'
                 onClick={handleLinkClick}>
                 EVENTS
               </Link>
             </li>
-            <li className='nav-item me-3'>
-              <Link className='nav-link fs-5' to='/order' onClick={handleLinkClick}>
+            <li className='nav-item me-4  me-xl-5'>
+              <Link className='nav-link border border-black rounded-2 px-2 fs-6' to='/order' onClick={handleLinkClick}>
                 ORDER NOW
               </Link>
             </li>

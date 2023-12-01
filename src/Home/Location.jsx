@@ -23,11 +23,12 @@ function Location() {
                 style={{
                   fontFamily: "Pacifico",
                 }}
-              className="mb-4 border-bottom border-whitem pb-2 "
+              className="mb-4 border-bottom border-white text-white pb-2 "
               >
                 Farmville
               </h3>
               <p 
+              className="text-white fs-6 md:fs-4"
               style={{
                 fontFamily: "poppins",
                 fontWeight:600
@@ -44,11 +45,11 @@ function Location() {
               style={{
                 fontFamily: "Pacifico",
               }}
-              className="mb-4 border-bottom border-whitem pb-2"
+              className="mb-4 border-bottom border-white text-white pb-2"
             >
               Hours
             </h3>
-            <p className="text-center  fs-4" style={{
+            <p className="text-center text-white fs-6 md:fs-4" style={{
                 fontFamily: "poppins",
                 fontWeight:600
                 

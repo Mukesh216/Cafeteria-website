@@ -8,7 +8,7 @@ function About() {
             backgroundColor: "#fff4e0"
         }}>
             <h1 className="about-h1 mt-lg-5 text-center text-black" style={{ fontFamily: "pacifico" }}>Welcome to Best Cafe corner in Kovai</h1>
-            <p className="p-2 py-3 text-center text-danger mb-4 fw-semibold " style={{ fontFamily: "Sono" }}>A gathering place in East Kovai Farmville! Stop by and enjoy <br></br> coffee, tea, live music, soups, salad, sandwiches, ice cream and much more!</p>
+            <h6 className="p-2 pt-4 pb-5 text-center text-danger mb-4 fw-semibold " style={{ fontFamily: "Sono" }}>A gathering place in East Kovai Farmville! Stop by and enjoy <br></br> coffee, tea, live music, soups, salad, sandwiches, ice cream and much more!</h6>
             <div className="aboutDesc" style={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -40,7 +40,7 @@ function About() {
                                     fontWeight: 600,
                                     backgroundColor: "#fff4e0",
                                     borderBottomColor: "black",
-                                    boxShadow: "5px 5px black",
+                                    boxShadow: "5px 5px black", 
                                 }} onClick={() => window.scrollTo(0, 0)}>UPCOMING EVENTS</button>
                             </Link>
                         </div>

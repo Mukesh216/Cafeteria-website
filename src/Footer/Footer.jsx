@@ -4,7 +4,7 @@ import "../App.css";
 
 function Footer() {
   return (
-    <div className="foot d-flex flex-column ">
+    <div className="foot d-flex flex-column fixe-bottom ">
     <div
       className="text-center p-2 col-sm-12 col-lg-12 col-md-12"
       style={{
@@ -66,7 +66,7 @@ function Footer() {
           <div>
             <img
               className="rounded-circle"
-              src="src\assets\logo.jpg"
+              src="https://res.cloudinary.com/dfsvudyfv/image/upload/v1701415924/WhatsApp_Image_2023-12-01_at_12.53.17_d0d6de96_jptya2.jpg"
               alt="shop-logo"
               style={{
                 width: 150,

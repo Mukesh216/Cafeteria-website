@@ -22,44 +22,42 @@ const CartSpan = ({ item, updateItemQuantity }) => {
       setQuantity(1)
       updateItemQuantity(item.id, 1)
     }
-    setClicked(!clicked)
-  }
+    setClicked(!clicked);
+  };
 
   return (
     <div>
-      <span>
+      {quantity === 0 && (
         <button
-          className={`p-2 btn btn-outline-success border-3 ${
-            clicked ? 'd-none' : ''
-          }`}
+          className="p-2 btn btn-outline-success border-1"
           onClick={handleCartClick}
           style={{ fontWeight: 600 }}
         >
           Add More
         </button>
-        {clicked && (
-          <div>
-            <button
-              className='btn btn-primary me-2'
-              onClick={decrementQuantity}
-            >
-              <i className='fa-solid fa-minus' style={{ fontSize: '12px' }}></i>
-            </button>
-            <span>{quantity}</span>
-            <button
-              className='btn btn-primary ms-2'
-              onClick={incrementQuantity}
-            >
-              <i className='fa-solid fa-plus' style={{ fontSize: '12px' }}></i>
-            </button>
-          </div>
-        )}
-      </span>
+      )}
+      {quantity > 0 && (
+        <div>
+          <button
+            className="btn btn-primary me-2"
+            onClick={decrementQuantity}
+          >
+            <i className="fa-solid fa-minus" style={{ fontSize: '12px' }}></i>
+          </button>
+          <span>{quantity}</span>
+          <button
+            className="btn btn-primary ms-2"
+            onClick={incrementQuantity}
+          >
+            <i className="fa-solid fa-plus" style={{ fontSize: '12px' }}></i>
+          </button>
+        </div>
+      )}
     </div>
   )
 }
 
-function OrderNow (props) {
+function OrderNow(props) {
   // cart items
   const { cartItems, setCartItems } = props
 
@@ -134,12 +132,36 @@ function OrderNow (props) {
     setClicked(!false)
   }
 
+  const handleBuy = () => {
+    window.scrollTo(0, document.body.scrollHeight);
+  };
+
+  const checkOut = () => {
+    //check if cart is empty
+    if (items.length === 0) {
+      alert('Please add items to cart')
+      return
+    }
+    //check if cart has items and details are filled
+    if (detailsContent === null && items.length > 0) {
+      alert('Please fill the order details ! Click EDIT')
+      return
+    }
+
+    alert("Order Placed !!. Thank You.");
+    setItems([])
+    setCartItems([])
+  }
+
+
+
   return (
     <div className='p-4' style={{ marginTop: 50, backgroundColor: '#f6efd4 ' }}>
-      <div className='d-flex mt-5 ps-5'>
+      <div className='d-flex flex-md-row flex-column w-100  gap-5 justify-content-center mt-sm-5 '>
+
         <div
-          className='shadow-effect p-3 me-3'
-          style={{ width: '60%', backgroundColor: '#f6efd6' }}
+          className='shadow-effect p-3 col-12 col-sm-10 mx-auto col-md-6 rounded-3'
+          style={{ backgroundColor: '#f6efd6', maxHeight: '600px', overflowY: 'scroll' }}
         >
           <h1
             className='mb-5 ms-3'
@@ -164,33 +186,38 @@ function OrderNow (props) {
           ) : (
             items.map(item => (
               <div
-                className='row mt-3 d-flex justify-content-center '
+                className='row mt-3 d-flex justify-content-center'
                 key={item.id}
               >
-                <div className='col-xl-10 d-flex justify-content-between'>
-                  <div className=' col-xl-6 d-flex align-items-center '>
+                <div className='col-xl-10 mb-4 d-flex flex-lg-row flex-column justify-content-between'>
+                  <div className=' col-xl-6 d-flex align-items-center justify-content-around mb-3'>
+
                     <img
-                      className='rounded-2 me-xl-4'
+                      className='rounded-2 me-xl-4 w-25 sm:w-50'
                       src={item.imageSrc}
                       alt={item.alt}
-                      style={{ width: 100 }}
                     />
-                    <h3>{item.name}</h3>
+                    <h3 className='fs-4 col-6'>{item.name}</h3>
                   </div>
-                  <div className='col-xl-6 d-flex align-items-center justify-content-around'>
-                    <h4>Rs. {item.price}</h4>
-                    <div style={{ width: 100 }}>
-                      <CartSpan
-                        item={item}
-                        updateItemQuantity={updateItemQuantity}
-                      />
+
+                  <div className='col-xl-6 d-flex align-items-center justify-content-end'>
+                    <div className='d-flex w-100 align-items-center'>
+
+                      <h4 className='mx-auto w-25'>Rs. {item.price}</h4>
+                      <div className='me-2'>
+                        <CartSpan
+                          item={item}
+                          updateItemQuantity={updateItemQuantity}
+                        />
+                      </div>
+                      <button
+                        className='btn btn-outline-danger border-1 remove'
+                        onClick={() => handleRemoveItem(item.id)}
+                      >
+                        REMOVE
+                      </button>
                     </div>
-                    <button
-                      className='btn btn-outline-danger border-3 remove'
-                      onClick={() => handleRemoveItem(item.id)}
-                    >
-                      REMOVE
-                    </button>
+
                   </div>
                 </div>
               </div>
@@ -198,17 +225,26 @@ function OrderNow (props) {
           )}
 
           {items.length > 0 && (
-            <button
-              className='btn btn-danger ms-5 mb-5'
-              style={{ marginTop: '2rem', fontWeight: 600 }}
-              onClick={handleEmptyCart}
-            >
-              <i className='me-2 fa-regular fa-trash-can'></i> EMPTY CART
-            </button>
+            <div className='d-flex justify-content-around'>
+              <button
+                className='btn btn-danger mb-5'
+                style={{ marginTop: '2rem', fontWeight: 600 }}
+                onClick={handleEmptyCart}
+              >
+                <i className='me-2 fa-regular fa-trash-can'></i> EMPTY CART
+              </button>
+              <button
+                className='btn btn-success mb-5 d-md-none'
+                style={{ marginTop: '2rem', fontWeight: 600 }}
+                onClick={handleBuy}
+              >
+                <i class="fa-solid fa-bag-shopping me-2"></i> BUY NOW
+              </button>
+            </div>
           )}
         </div>
 
-        <div style={{ width: '30%' }} className='ms-4'>
+        <div className=''>
           <div className='bg-white '>
             <div className='d-flex bg-black justify-content-between align-items-center'>
               <h1
@@ -247,6 +283,7 @@ function OrderNow (props) {
                         className='btn-close'
                         data-bs-dismiss='modal'
                         aria-label='Close'
+                        onClick={() => setClicked(false)}
                       ></button>
                     </div>
                     <div>
@@ -380,9 +417,25 @@ function OrderNow (props) {
                 </h1>
               </div>
               {detailsContent}
+              <button type='button'
+                className={` ${clicked ? '' : 'd-none'} btn btn-danger `}
+                onClick={
+                  //reset form data
+                  () => {
+                    setDetailsContent(null)
+                    setClicked(false)
+                    setFormData({
+                      email: '',
+                      phone: '',
+                      option: '',
+                      date: ''
+                    })
+                  }
+                }
+              >Delete</button>
             </div>
 
-            <div className='mt-2' style={{ height: 350 }}>
+            <div className='mt-5 sm:mt-2' style={{ height: 350 }}>
               <h1
                 style={{ fontFamily: 'poppins', fontWeight: 600 }}
                 className='p-2 ps-3 text-white bg-black'
@@ -411,7 +464,7 @@ function OrderNow (props) {
                       (CGST - 2%)
                     </span>
                   </h4>
-                  <h4>Rs. {total * 0.02 * totalSelectedItems}</h4>
+                  <h4>Rs. {(total * 0.02 * totalSelectedItems).toFixed(2)}</h4>
                 </div>
                 <div className='d-flex justify-content-between'>
                   <h4>Total</h4>
@@ -434,6 +487,7 @@ function OrderNow (props) {
                   <button
                     className='btn btn-success mt-3'
                     style={{ fontWeight: 600 }}
+                    onClick={checkOut}
                   >
                     CHECKOUT
                   </button>

@@ -52,7 +52,7 @@ function Event() {
     ];
 
     return (
-        <div className='mt-5 container text-center event_container' style={{marginBottom:300}}>
+        <div className='mt-5 container text-center event_container ' style={{marginBottom:300}}>
             <div className='eventBg' style={{height:1700}}></div>
             <h2 className='mb-5 border-bottom border-4 border-info pb-2' style={{marginTop:140,color:"#FFEA20",fontFamily:"poppins",fontWeight:600}}><span className='text-black fs-1' >U</span>pcoming <span className='text-black fs-1'>E</span>vents</h2>
             <ul style={{ listStyle: "none" , }} className="event_lists text-white">

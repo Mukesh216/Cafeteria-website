@@ -17,26 +17,35 @@
 }
 
 .bgDiv {
-  background-image: url("./assets/wall.jpg");
+  background-image: url("https://res.cloudinary.com/dfsvudyfv/image/upload/v1701414908/wall_vqyltq.jpg");
   background-attachment: fixed;
 }
+
+
+
+
+
 
 .navbar {
   /* background: linear-gradient(to right, #FF6000,#FF6000 ,#e77400,#f86911,#f59a4f,#f7a25d , #ff9f51); */
   background-color: #f9bb92;
   /* background-color: #f6efd4 */
 }
+
+.arri{
+  border: 4px solid #f4af81 ;
+}
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 37, 41, 1' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 .menuDiv {
-  background-image: url("./assets/wall2.jpg");
+  background-image: url("https://res.cloudinary.com/dfsvudyfv/image/upload/v1701414925/wall2_hvkii3.webp");
   background-attachment: fixed;
 }
 
 
 .bgLoc {
-  background-image: url("./assets/bg.jpg");
+  background-image: url("https://res.cloudinary.com/dfsvudyfv/image/upload/v1701414945/bg_m5ya3b.jpg");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -115,8 +124,20 @@
 }
 
 @media (max-width : 576px) {
+
+  .title{
+    font-size: 5.4rem;
+    line-height: 1.6;
+    font-family: "Pacifico", cursive;
+    color: #c7560b !important;
+    text-shadow: 1px 1px  5px #ffffff , 1px 1px 5px #ffffff;
+  }
+
   .ab-img{
     width: 100%;
+  }
+  .nav-link{
+    border: 1px solid #f9bb92 !important;
   }
 }
 @media (min-width: 577px) and (max-width: 768px) {
@@ -131,6 +152,7 @@
     height: 600px;
 
   }
+
 }
 @media (min-width : 993px) and (max-width : 1024px){
   .ab-img{
@@ -168,11 +190,32 @@
   .custom-image {
     width: 140px; /* Set the desired width for large screens (lg) */
   }
+  .title-div{
+    top:45%;
+  }
+  .title{
+    font-size: 6rem;
+    line-height: 1.6;
+    font-family: "Pacifico", cursive;
+    color: #c7560b !important;
+    text-shadow: 1px 1px  5px #ffffff , 1px 1px 5px #ffffff;
+  }
 }
 
 @media (min-width: 992px) {
   .custom-image {
     width: 150px; /* Set the desired width for large screens (lg) */
+
+  }
+  .title-div{
+    top:45%;
+  }
+  .title{
+    font-size: 7.2rem;
+    line-height: 1.6;
+    font-family: "Pacifico", cursive;
+    color: #c7560b !important;
+    text-shadow: 1px 1px  5px #ffffff , 1px 1px 5px #ffffff;
   }
 }
 
@@ -180,10 +223,17 @@
   .custom-image {
     width: 165px; /* Set the desired width for large screens (lg) */
   }
+  .title-div{
+    top:45%;
+  }
+  .title{
+    font-size: 10rem;
+    line-height: 1.6;
+    font-family: "Pacifico", cursive;
+    color: #ed965c !important;
+    text-shadow: 2px 2px 12px #000000 , 2px 2px 10px #000000 , 2px 2px 5px #000;
+  }
 }
-
-
-
 
 
   
@@ -215,11 +265,19 @@
 
 
 .shadow-effect {
-  box-shadow: -5px -5px 5px 0px #3f3a37;
-
+  box-shadow: 1px 1px 10px #3f3a37;
 }
 
 .remove:hover{
   background-color: #b80101;
   color: white;
+}
+
+.arrow{
+  bottom: 20%;
+}
+
+.ado:hover{
+  background-color: #f1945790 !important;
+  color: black;
 }
