@@ -157,10 +157,10 @@ function OrderNow(props) {
 
   return (
     <div className='p-4' style={{ marginTop: 50, backgroundColor: '#f6efd4 ' }}>
-      <div className='d-flex flex-md-row flex-column w-100  gap-5 justify-content-center mt-sm-5 '>
+      <div className='d-flex flex-md-row flex-column w-75 gap-5 mx-auto justify-content-center mt-sm-5 '>
 
         <div
-          className='shadow-effect p-3 col-12 col-sm-10 mx-auto col-md-6 rounded-3'
+          className='shadow-effect p-3 col-12 col-sm-10 mx-auto col-md-8 rounded-3'
           style={{ backgroundColor: '#f6efd6', maxHeight: '600px', overflowY: 'scroll' }}
         >
           <h1
