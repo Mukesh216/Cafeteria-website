@@ -8,7 +8,7 @@ import HashLoader from "react-spinners/HashLoader";
 
 import "animate.css";
 
-function breakFast(props) {
+function BreakFast(props) {
 
     const [loading, setLoading] = useState(true);
 
@@ -112,4 +112,4 @@ function breakFast(props) {
     );
 }
 
-export default breakFast;
+export default BreakFast;
