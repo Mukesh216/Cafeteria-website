@@ -1,23 +1,24 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "*.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "vite.config.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "src/**/*",
-            "use": "@vercel/node"
-        }
+      {
+        "src": "public/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "vite.config.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "src/**/*",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
     ]
-}
+  }
+  
