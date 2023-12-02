@@ -1,6 +1,7 @@
 import React from 'react';
 
 import "../App.css";
+import { Link } from 'react-router-dom';
 
 function Tea() {
   return (
@@ -10,7 +11,7 @@ function Tea() {
         <div className="card-body text-center">
           <h5 className="card-title"  style={{fontFamily : "Arvo"}}>Tea</h5>
           <p className="card-text fw-semibold d-none d-sm-block"   style={{fontFamily : "Ysabeau Infant"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a className="btn btn-outline-primary ms-2 fw-semibold" href='/menu' style={{fontFamily : "Sono"}}>Explore Menu</a>
+          <Link className="btn btn-outline-primary ms-2 fw-semibold" href='/menu' style={{fontFamily : "Sono"}}>Explore Menu</Link>
         </div>
       </div>
     </div>
