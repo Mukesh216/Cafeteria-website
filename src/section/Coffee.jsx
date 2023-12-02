@@ -15,7 +15,7 @@ function Coffee() {
         <div className="card-body text-center" >
           <h5 className="card-title"  style={{fontFamily : "Arvo"}}>Coffee</h5>
           <p className="card-text fw-semibold d-none d-sm-block "   style={{fontFamily : "Ysabeau Infant"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a className="btn btn-outline-primary ms-2 fw-semibold" id='coffeeExplore'  style={{fontFamily : "Sono"}}>Explore Menu </a>
+          <a className="btn btn-outline-primary ms-2 fw-semibold" id='coffeeExplore' href='/menu'  style={{fontFamily : "Sono"}}>Explore Menu </a>
         </div>
       </div>
     </div>
