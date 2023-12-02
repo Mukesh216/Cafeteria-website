@@ -9,9 +9,6 @@ import Event from "./Events/Event";
 import Order from "./Order/OrderNow";
 
 
-
-
-
 function App() {
 
   const [cartItems, setCartItems] = useState([]);
