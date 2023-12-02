@@ -7,7 +7,6 @@ import "../App.css";
 
 function Coffee() {
 
-
   return (
 
     <div className='Cards' id='coffee card'>
