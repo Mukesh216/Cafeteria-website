@@ -75,7 +75,6 @@ function Landing() {
 
   const handleSectionEnter = () => {
     console.log('section entered');
-    // Apply the animation class after a short delay
     setTimeout(() => {
       setSectionAnimated(true);
     }, 300);
@@ -83,7 +82,6 @@ function Landing() {
 
   const handleTopEnter = () => {
     console.log('top entered');
-    // Set sectionAnimated to false when the top is reached
     setSectionAnimated(false);
   };
 
