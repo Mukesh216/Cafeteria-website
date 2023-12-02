@@ -11,18 +11,18 @@ function Section({animated}) {
             <div className="bgDiv ">
                 <div className="container pt-4 pt-md-5 pb-3">
                     <div className="row">
-                        <div className={`col-6 col-lg-3 col-md-6 px-2 pb-3  ${animated ? 'animate__animated animate__fadeInDown' : ''}`}>
+                        <div className={`col-6 col-lg-3 col-md-6 px-2 pb-3  ${animated ? 'animate__animated animate__slideInLeft' : ''}`}>
                             <Coffee></Coffee>
                         </div>
-                        <div className={`col-6 col-lg-3 col-md-6  px-2 pb-3 ${animated ? 'animate__animated animate__fadeInDown' : ''}`}>
+                        <div className={`col-6 col-lg-3 col-md-6  px-2 pb-3 ${animated ? 'animate__animated animate__slideInLeft' : ''}`}>
                             <Tea></Tea>
 
                         </div>
-                        <div className={` col-6 col-lg-3  px-2 pb-3 col-md-6 ${animated ? 'animate__animated animate__fadeInUp' : ''}`}>
+                        <div className={` col-6 col-lg-3  px-2 pb-3 col-md-6 ${animated ? 'animate__animated animate__slideInRight' : ''}`}>
                             <Pastries></Pastries>
 
                         </div>
-                        <div className={` col-6 col-lg-3  px-2 pb-3 col-md-6 ${animated ? 'animate__animated animate__fadeInUp' : ''}`}>
+                        <div className={` col-6 col-lg-3  px-2 pb-3 col-md-6 ${animated ? 'animate__animated animate__slideInRight' : ''}`}>
                             <Drinks></Drinks>
 
                         </div>

@@ -28,7 +28,7 @@ function Location() {
                 Farmville
               </h3>
               <p 
-              className="text-white fs-6 md:fs-4"
+              className="text-white fs-6"
               style={{
                 fontFamily: "poppins",
                 fontWeight:600
@@ -49,7 +49,7 @@ function Location() {
             >
               Hours
             </h3>
-            <p className="text-center text-white fs-6 md:fs-4" style={{
+            <p className="text-center text-white fs-6 " style={{
                 fontFamily: "poppins",
                 fontWeight:600
                 
