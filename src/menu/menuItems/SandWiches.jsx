@@ -41,7 +41,7 @@ function SandWiches(props) {
         setTimeout(() => {
             sand[index].classList.remove("slidee");
         }, 1000);
-    };
+    
 
     return (
         <>
