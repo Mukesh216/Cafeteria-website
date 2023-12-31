@@ -21,7 +21,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header></Header>
+      <Header cartItems={cartItems}></Header>
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/menu" element={<Menu addToCart={addToCart} cartItems={cartItems} setCartItems={setCartItems}/>} />

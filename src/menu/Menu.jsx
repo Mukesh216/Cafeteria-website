@@ -21,7 +21,7 @@ function Menu(props) {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		window.scrollTo(0, 0);
+		// window.scrollTo(0, 0);
 
 		const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
 		console.log(`Time to fully render: ${loadTime}ms`);

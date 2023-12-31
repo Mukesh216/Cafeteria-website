@@ -92,7 +92,7 @@ function Landing() {
       {loading ? (
         <HashLoader className="vh-100 flex justify-center mx-auto" color="#896752" />
       ) : (
-        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 ld">
           <Waypoint onEnter={handleTopEnter} />
           <Brand />
           <Element name="section" className="element">

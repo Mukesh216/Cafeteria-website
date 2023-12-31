@@ -11,7 +11,7 @@ function Pastries() {
         <div className="card-body text-center">
           <h5 className="card-title"  style={{fontFamily : "Arvo"}}>Pastries</h5>
           <p className="card-text fw-semibold d-none d-sm-block"   style={{fontFamily : "Ysabeau Infant"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <Link  className="btn btn-outline-primary ms-2 fw-semibold" href='/menu'  style={{fontFamily : "Sono"}}>Explore Menu</Link>
+          <Link  className="btn btn-outline-primary ms-2 fw-semibold" to='/menu'  style={{fontFamily : "Sono"}}>Explore Menu</Link>
         </div>
       </div>
 

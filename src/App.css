@@ -23,7 +23,9 @@
 
 
 
-
+.ld{
+  overflow: hidden;
+}
 
 
 .navbar {
@@ -179,14 +181,21 @@
 }
 
 /* Adjust the image size for medium screens (md) */
-@media (min-width: 577px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 768px) {
   .custom-image {
     width: 130px; /* Set the desired width for medium screens (md) */
+  }
+  .title{
+    font-size: 5.7rem;
+    line-height: 1.6;
+    font-family: "Pacifico", cursive;
+    color: #c7560b !important;
+    text-shadow: 1px 1px  5px #ffffff , 1px 1px 5px #ffffff;
   }
 }
 
 /* Adjust the image size for large screens (lg) */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .custom-image {
     width: 140px; /* Set the desired width for large screens (lg) */
   }
@@ -278,6 +287,58 @@
 }
 
 .ado:hover{
-  background-color: #f1945790 !important;
+  background-color: rgb(163, 255, 163) !important;
   color: black;
+}
+
+.fli{
+  font-size: .8rem;
+  padding: 2px;
+}
+
+
+.slidee{
+  background: rgb(254, 198, 57);
+  width: 100%;
+  height: 0%;
+  z-index: 1;
+  opacity: 0.5;
+  animation: slide 1s linear infinite;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+@keyframes slide{
+  0%{
+    height: 0%;
+  }
+  30%{
+    height: 100%;
+  }
+  50%{
+    height: 100%;
+  }
+  70%{
+    height: 100%;
+  }
+  100%{
+    height: 0%;
+  }
+
+}
+
+
+  .slidee i{
+    opacity: 1;
+  }
+.ithh{
+  opacity: 0;
+}
+
+.test{
+  width: 100%;
+  height: 100%;
 }

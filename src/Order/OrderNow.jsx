@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 const CartSpan = ({ item, updateItemQuantity }) => {
+
   const [clicked, setClicked] = useState(false)
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(1)
 
   const incrementQuantity = () => {
     setQuantity(prevQuantity => prevQuantity + 1)
@@ -11,7 +12,13 @@ const CartSpan = ({ item, updateItemQuantity }) => {
   }
 
   const decrementQuantity = () => {
-    if (quantity > 0) {
+    if(quantity === 1) {
+      setQuantity(1)
+      updateItemQuantity(item.id, 1)
+      setClicked(!clicked)
+    }
+
+    if (quantity > 0 && quantity !== 1) {
       setQuantity(prevQuantity => prevQuantity - 1)
       updateItemQuantity(item.id, quantity - 1)
     }
@@ -19,24 +26,24 @@ const CartSpan = ({ item, updateItemQuantity }) => {
 
   const handleCartClick = () => {
     if (!clicked) {
-      setQuantity(1)
-      updateItemQuantity(item.id, 1)
+      setQuantity(2)
+      updateItemQuantity(item.id, 2)
     }
     setClicked(!clicked);
   };
 
   return (
     <div>
-      {quantity === 0 && (
+      {quantity === 1 && (
         <button
           className="p-2 btn btn-outline-success border-1"
           onClick={handleCartClick}
           style={{ fontWeight: 600 }}
         >
-          Add More
+          Add More 
         </button>
       )}
-      {quantity > 0 && (
+      {quantity > 1 && (
         <div>
           <button
             className="btn btn-primary me-2"
@@ -61,6 +68,8 @@ function OrderNow(props) {
   // cart items
   const { cartItems, setCartItems } = props
 
+  console.log("her" ,cartItems)
+
   const [items, setItems] = useState([])
 
   useEffect(() => {
@@ -68,6 +77,7 @@ function OrderNow(props) {
   }, [cartItems])
 
   const handleEmptyCart = () => {
+    alert('Are you sure you want to empty the cart ?')
     setItems([])
     setCartItems([])
   }
@@ -86,7 +96,7 @@ function OrderNow(props) {
   }
 
   const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0)
-  const totalSelectedItems = items.reduce((acc, item) => acc + item.quantity, 0)
+  const totalSelectedItems = items.length;
 
   //forms
   const [details, setDetails] = useState('')
@@ -95,7 +105,7 @@ function OrderNow(props) {
     phone: '',
     option: '',
     date: ''
-  })
+  })  
 
   const [detailsContent, setDetailsContent] = useState(null)
 
@@ -133,7 +143,7 @@ function OrderNow(props) {
   }
 
   const handleBuy = () => {
-    window.scrollTo(0, document.body.scrollHeight);
+    window.scrollTo(0, document.body.scrollHeight - 1000);
   };
 
   const checkOut = () => {
@@ -144,7 +154,13 @@ function OrderNow(props) {
     }
     //check if cart has items and details are filled
     if (detailsContent === null && items.length > 0) {
-      alert('Please fill the order details ! Click EDIT')
+      alert('Please fill the order details ! Click EDIT');
+
+      window.scrollTo(0, 
+        //slide a bit up to show the details
+        document.body.scrollHeight - 1000 
+        );
+
       return
     }
 
@@ -157,11 +173,12 @@ function OrderNow(props) {
 
   return (
     <div className='p-4' style={{ marginTop: 50, backgroundColor: '#f6efd4 ' }}>
-      <div className='d-flex flex-md-row flex-column col-12 col-sm-10 gap-5 mx-auto justify-content-center mt-sm-5 '>
+
+      <div className='d-flex flex-md-row flex-column col-12 px-lg-4 col-xl-10 gap-5 gap-sm-3 gap-lg-4 gap-xl-5 mx-auto justify-content-center mt-sm-5 '>
 
         <div
-          className='shadow-effect p-3  mx-auto  rounded-3'
-          style={{ backgroundColor: '#f6efd6', maxHeight: '600px', overflowY: 'scroll' }}
+          className='shadow-effect p-3 col-md-7 col-lg-8 col-xl-8 co mx-auto  rounded-3'
+          style={{ backgroundColor: '#f6efd6', maxHeight: '700px', overflowY: 'scroll' }}
         >
           <h1
             className='mb-5 ms-3'
@@ -189,8 +206,9 @@ function OrderNow(props) {
                 className='row mt-3 d-flex justify-content-center'
                 key={item.id}
               >
-                <div className='col-xl-10 mb-4 d-flex flex-lg-row flex-column justify-content-between'>
-                  <div className=' col-xl-6 d-flex align-items-center justify-content-around mb-3'>
+                <div className='col-xl-10 mb-4 d-flex flex-lg-row  flex-column justify-content-between'>
+
+                  <div className='col-xl-6 d-flex align-items-center justify-content-around mb-3'>
 
                     <img
                       className='rounded-2 me-xl-4 w-25 sm:w-50'
@@ -200,22 +218,30 @@ function OrderNow(props) {
                     <h3 className='fs-4 col-6'>{item.name}</h3>
                   </div>
 
-                  <div className='col-xl-6 d-flex align-items-center justify-content-end'>
-                    <div className='d-flex w-100 align-items-center'>
+                  <div className='col-lg-6 d-flex align-items-center '>
+                    <div className='d-flex w-100 justify-content-between align-items-center '>
 
-                      <h4 className='mx-auto w-25'>Rs. {item.price}</h4>
-                      <div className='me-2'>
-                        <CartSpan
-                          item={item}
-                          updateItemQuantity={updateItemQuantity}
-                        />
+                      <div className=' w-25 text-center'>
+                        <h4 className='mx-auto'>
+                          Rs. {item.price}
+                        </h4>
                       </div>
-                      <button
-                        className='btn btn-outline-danger border-1 remove'
-                        onClick={() => handleRemoveItem(item.id)}
-                      >
-                        REMOVE
-                      </button>
+
+                      <div className="d-flex">
+
+                        <div className='me-2 '>
+                          <CartSpan
+                            item={item}
+                            updateItemQuantity={updateItemQuantity}
+                          />
+                        </div>
+                        <button
+                          className='btn btn-outline-danger border-1 remove'
+                          onClick={() => handleRemoveItem(item.id)}
+                        >
+                          REMOVE
+                        </button>
+                      </div>
                     </div>
 
                   </div>
@@ -244,8 +270,8 @@ function OrderNow(props) {
           )}
         </div>
 
-        <div className=''>
-          <div className='bg-white '>
+        <div className='col-md-5 col-lg-4 '>
+          <div className='bg-white od'>
             <div className='d-flex bg-black justify-content-between align-items-center'>
               <h1
                 style={{ fontFamily: 'poppins', fontWeight: 600 }}

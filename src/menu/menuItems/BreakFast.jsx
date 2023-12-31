@@ -21,21 +21,27 @@ function BreakFast(props) {
 
         window.scrollTo(0, 0);
     }, []);
-    
+
 
     const { addToCart, cartItems, setCartItems } = props;
 
-    const handleClick = (item) => {
+    const handleClick = (item, index) => {
         const itemInCart = cartItems.find((cartItem) => cartItem.name === item.name);
-        if (itemInCart) {
-            setCartItems(
-                cartItems.map((cartItem) =>
-                    cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-                )
-            );
-        } else {
+        if (!itemInCart) {
+       
             setCartItems([...cartItems, { ...item, quantity: 1 }]);
         }
+
+        const anim = document.querySelectorAll(".ani");
+        anim[index].classList.toggle("slidee");
+
+
+        setTimeout(() => {
+            anim[index].classList.remove("slidee");
+        }, 1000);
+
+
+
     };
 
     return (
@@ -64,12 +70,20 @@ function BreakFast(props) {
                                         <div className="row mt-4 justify-content-center" key={index}>
                                             <div className="p-1 col-8">
                                                 <div className="d-flex align-items-center mx-2 mx-md-3 mx-lg-4 mx-xl-5">
-                                                    <img
-                                                        src={item.imageSrc}
-                                                        alt={item.alt}
-                                                        className="me-lg-4 me-md-4 me-4 rounded-3 custom-image"
-                                                    />
-                                                    <div className="d-flex flex-column">
+                                                    
+                                                    <div className="position-relative ">
+
+                                                        <img
+                                                            src={item.imageSrc}
+                                                            alt={item.alt}
+                                                            className=" rounded-3 custom-image"
+                                                        />
+                                                        <span className="left-0 breakfast bottom-0 ani start-0  rounded position-absolute">
+                                                            <i className="fa-solid fa-check fs-1 text-white ithh"></i>
+                                                        </span>
+                                                    </div>
+
+                                                    <div className="d-flex flex-column ps-4">
                                                         <h3 className="fw-bold" style={{ fontFamily: "Ysabeau Infant" }}>{item.name}</h3>
                                                         <p className="d-none d-lg-block">{item.description}</p>
                                                     </div>
@@ -87,7 +101,7 @@ function BreakFast(props) {
                                                     {/* Button with spacing */}
                                                     <button
                                                         className="p-2 ado bg-transparent rounded-2 d-flex align-items-center me-3 me-sm-1 px-2 "
-                                                        onClick={() => handleClick(item)}
+                                                        onClick={() => handleClick(item, index)}
                                                         style={{ fontFamily: "poppins", fontWeight: 600 }}
                                                     >
                                                         <GrCart className="me-2 fs-3 fs-sm-4" />
