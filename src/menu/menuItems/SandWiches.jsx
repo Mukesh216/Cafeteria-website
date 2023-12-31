@@ -30,7 +30,7 @@ function SandWiches(props) {
         const itemInCart = cartItems.find((cartItem) => cartItem.name === item.name);
 
         // console.log(itemInCart);
-        if (!itemInCart)
+        if (!itemInCart){
             setCartItems([...cartItems, { ...item, quantity: 1 }]);
         }
 
@@ -41,6 +41,9 @@ function SandWiches(props) {
         setTimeout(() => {
             sand[index].classList.remove("slidee");
         }, 1000);
+
+    };
+
     
 
     return (
