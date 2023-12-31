@@ -23,7 +23,7 @@ function App() {
     <BrowserRouter>
       <Header cartItems={cartItems}></Header>
       <Routes>
-        <Route path="/" element={<Landing />}></Route>
+        <Route path="/Cafeteria-website" element={<Landing />}></Route>
         <Route path="/menu" element={<Menu addToCart={addToCart} cartItems={cartItems} setCartItems={setCartItems}/>} />
         <Route path="/events" element={<Event />} />
         <Route path="/order" element={<Order cartItems={cartItems}  setCartItems={setCartItems} />} />
