@@ -48,16 +48,16 @@ function Header(props) {
           aria-label='Toggle navigation'
           onClick={handleToggleNav}
         >
-          <span className=' navbar-toggler-icon'>
-          
-          </span>
+          <span className='position-relative navbar-toggler-icon'>
+
           {
-              cartItems.length > 0 && (
-                <span className='position-absolute top-0 start-100 translate-middle badge border border-black rounded-circle bg-success p-1'>
+            cartItems.length > 0 && (
+              <span className='position-absolute top-0 start-100 translate-middle badge border border-black rounded-circle bg-success p-1'>
                   <i className='fa-solid fa-shopping-cart fli text-white'></i>
                 </span>
               )
             }
+            </span>
         </button>
         <div className={`collapse navbar-collapse ${isNavOpen ? 'show' : ''}`} id='navbarTogglerDemo02'>
           <ul className='navbar-nav text-center pt-3 pt-sm-0 ms-auto mt-3 mt-sm-0 mb-2 mb-lg-0 me-xl-5'>
@@ -105,7 +105,6 @@ function Header(props) {
                     </span>
                   )
                 }
-
 
               </Link>
             </li>

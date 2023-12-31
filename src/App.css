@@ -52,6 +52,15 @@
   background-size: cover;
 }
 
+.home-brand-img.loaded > img{
+  opacity: 1;
+  
+}
+.home-brand-img > img{
+  opacity: 0  ;
+  transition: opacity 200ms ease-in-out;
+}
+
 .Cards:hover {
   transform: scale(0.98);
 }
