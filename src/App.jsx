@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Header from "./Header/Header";
 import Landing from "./Home/Landing";
 import Menu from "./menu/Menu";
@@ -20,16 +20,16 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header cartItems={cartItems}></Header>
       <Routes>
-        <Route path="/Cafeteria-website/" element={<Landing />}></Route>
+        <Route path="/" element={<Landing />}></Route>
         <Route path="/menu" element={<Menu addToCart={addToCart} cartItems={cartItems} setCartItems={setCartItems}/>} />
         <Route path="/events" element={<Event />} />
         <Route path="/order" element={<Order cartItems={cartItems}  setCartItems={setCartItems} />} />
       </Routes>
       <Footer></Footer>
-    </BrowserRouter>
+    </HashRouter>
 
   );
 }
