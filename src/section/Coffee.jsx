@@ -15,7 +15,9 @@ function Coffee() {
         <img className='rounded-bottom-4 p-1 ' src="https://res.cloudinary.com/dfsvudyfv/image/upload/v1701483961/pexels-chevanon-photography-312418_sjpkys.jpg" alt="coffee-img" ></img>
         <div className="card-body text-center" >
           <h5 className="card-title"  style={{fontFamily : "Arvo"}}>Coffee</h5>
-          <p className="card-text fw-semibold d-none d-sm-block "   style={{fontFamily : "Ysabeau Infant"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p className="card-text fw-semibold d-none d-sm-block "   style={{fontFamily : "Ysabeau Infant"}}>
+          Bold brews and rich aromas – our coffee selection elevates your day with every sip
+            </p>
           <Link className="btn btn-outline-primary ms-2 fw-semibold" id='coffeeExplore' to='/menu' style={{fontFamily : "Sono"}}>Explore Menu </Link>
         </div>
       </div>

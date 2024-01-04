@@ -28,8 +28,8 @@ function About() {
                     </div>
                     <div className="mt-5 d-flex flex-column justify-content-center col-lg-6">
                         <div >
-                            <h1 className="about-h2 text-center" style={{ fontFamily: "pacifico" }}>Serving Since 1949!</h1>
-                            <p className="about-p2 text-center mt-4 ms-3" style={{ fontFamily: "Prompt" }}>Established in 1949, Uptown Coffee Cafe in Farmville is a family-owned business  that brings people together through its exceptional coffee, delicious food, and live music events. Passionate about fostering community connections, we create a warm and inviting space for all to enjoy.</p>
+                            <h1 className="about-h2 text-center" style={{ fontFamily: "pacifico" }}>Serving Since 1995!</h1>
+                            <p className="about-p2 text-center mt-4 ms-3" style={{ fontFamily: "Prompt" }}>Established in 1995, CafeBROS in East Kovai is a family-owned business  that brings people together through its exceptional coffee, delicious food, and live music events. Passionate about fostering community connections, we create a warm and inviting space for all to enjoy.</p>
                         </div>
                         <br />
                         <div className="text-center ">

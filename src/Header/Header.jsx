@@ -20,7 +20,7 @@ function Header(props) {
     <nav className='navbar navbar-expand-lg  fixed-top'>
       <div className='container-fluid'>
         <Link className='navbar-brand d-none d-sm-block' to='/'>
-          <h3 className='me-xl-5 me-lg-3 fs-2'>CoffeeCafe</h3>
+          <h3 className='me-xl-5 me-lg-3 fs-2'>CafeBROS</h3>
         </Link>
         <div className='col-lg-4 col-md-6'>
           <form className='d-flex' role='search'>
